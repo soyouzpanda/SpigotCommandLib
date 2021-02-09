@@ -23,7 +23,9 @@
  */
 package io.github.mrblobman.spigotcommandlib.args;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Color;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,6 +115,14 @@ public class ArgumentFormatter<T> {
             "separated by commas representing the",
             "3 RGB values in the color.",
             "Ex: 0,255,13");
+
+    public static final ArgumentFormatter<Player> PLAYER = new ArgumentFormatter<>(
+            Player.class,
+            "[A-Za-z0-9_]{3,16}",
+            Bukkit::getPlayer,
+            "Player",
+            "A player name");
+
 
     private interface ArgumentParser<T> {
         T parse(String arg);
