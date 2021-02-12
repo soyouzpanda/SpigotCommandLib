@@ -24,6 +24,7 @@
 package io.github.mrblobman.spigotcommandlib.args;
 
 import org.bukkit.Color;
+import org.bukkit.entity.Player;
 
 import java.lang.reflect.Array;
 import java.util.HashMap;
@@ -50,6 +51,7 @@ public class FormatterMapping {
         registerMapping(Float.class, FLOAT);
         registerMapping(float.class, FLOAT);
         registerMapping(Color.class, COLOR);
+        registerMapping(Player.class, PLAYER);
     }
 
     private static Class getArrayVersionOfClass(Class clazz) {
